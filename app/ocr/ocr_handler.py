@@ -25,7 +25,7 @@ class OCRHandler:
             **kwargs
         )
 
-    def recognize(self, image: Union[str, Image.Image, np.ndarray], cls: bool = True) -> List[Tuple[List, Tuple[str, float]]]:
+    def _recognize(self, image: Union[str, Image.Image, np.ndarray], cls: bool = True) -> List[Tuple[List, Tuple[str, float]]]:
         """
         Recognize text from an image file path, Pillow Image, or numpy array.
         Args:
@@ -54,6 +54,6 @@ class OCRHandler:
         Returns:
             str: Recognized text.
         """
-        results = self.recognize(image)
+        results = self._recognize(image)
         lines = [text for _, (text, score) in results]
         return '\n'.join(lines) if join else lines

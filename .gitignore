@@ -1,4 +1,5 @@
 images/*
 results/*
+__pycache__/
 
 poetry.lock
