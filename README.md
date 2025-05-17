@@ -39,8 +39,8 @@ This project aims to build a fully local system that takes an image of handwritt
 
 ### OCR
 
-* Default: Tesseract OCR (via pytesseract)
-* Optional: PaddleOCR (for higher accuracy)
+* Default: PaddleOCR (for higher accuracy)
+* Optional: Tesseract OCR (via pytesseract)
 * Optional: Kraken (for historical or messy handwriting)
 
 ### Markdown Conversion
@@ -56,25 +56,22 @@ This project aims to build a fully local system that takes an image of handwritt
 
 ## System Architecture
 
-1. **Input Handler**
+1. **Image Handler**
 
    * Loads image(s) from specified directory or GUI.
-
-2. **Preprocessing Module**
-
    * Converts to grayscale.
    * Applies noise reduction, thresholding, and skew correction.
 
-3. **OCR Module**
+2. **OCR Module**
 
    * Applies chosen OCR engine to the processed image.
 
-4. **Markdown Formatter**
+3. **Markdown Formatter**
 
    * Applies text structure parsing.
    * Outputs Markdown file with detected headings, lists, and paragraphs.
 
-5. **Output Module**
+4. **Output Module**
 
    * Saves the result as `.md` in a target directory.
 
